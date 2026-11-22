@@ -1,0 +1,14 @@
+{
+  "name": "peapod-deck",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A single-file HTML presentation where each slide lives inside an object on the previous one, presented by a cast of pixel-art characters.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/smoke.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.48.2"
+  }
+}
