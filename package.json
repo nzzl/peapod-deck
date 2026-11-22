@@ -2,7 +2,7 @@
   "name": "peapod-deck",
   "version": "1.0.0",
   "private": true,
-  "description": "A single-file HTML presentation where each slide lives inside an object on the previous one, presented by a cast of pixel-art characters.",
+  "description": "A single-file HTML presentation with a pixel-art garden cast that presents your slides, plus a zoom version where each slide lives inside the last.",
   "license": "MIT",
   "type": "module",
   "scripts": {

@@ -12,13 +12,14 @@ Thanks for helping! New characters, portals and scene backdrops are especially w
 
 ## Adding a character
 
-1. Draw it as rows of characters plus a palette (see `GK` for Gigi or `ZIP_ROWS` for Zip).
-2. Render it with `spriteSVG(frames, palette, pixelSize)` and place it with `makeActor(scene, html, { x, y, w, h, title })`.
-3. Give it an idle loop, a click reaction and an `arrive` line in its scene's entry in `DEFS`.
+1. Draw it as rows of characters plus a palette (see the gecko `GK` or `ZIP_ROWS` for Zip).
+2. Render it with `spriteSVG(frames, palette, pixelSize)`.
+3. **In `index.html`:** add it to the garden in the `Scene` module, next to the koi, lizard and gecko, with an idle loop and a click reaction.
+4. **In `zoom-deck.html`:** place it with `makeActor(scene, html, { x, y, w, h, title })` and give it an `arrive` line in its scene's entry in `DEFS`.
 
 ## Adding a portal kind
 
-Add a branch to `buildPortal()` in `index.html` that draws decoration behind the circle (`bh`) and styles its rim (`rimCss`). The circle itself, the preview and the dive are handled for you.
+Add a branch to `buildPortal()` in `zoom-deck.html` that draws decoration behind the circle (`bh`) and styles its rim (`rimCss`). The circle itself, the preview and the dive are handled for you.
 
 ## Before opening a pull request
 

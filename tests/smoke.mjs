@@ -11,8 +11,8 @@ import path from 'node:path';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DECKS = [
-  { file: 'index.html', presses: 20, wait: 900 },        // 12 beats + 8 zoom dives
-  { file: 'garden-deck.html', presses: 20, wait: 1400 }, // 12 beats + 8 slide changes
+  { file: 'index.html', presses: 20, wait: 1400 },       // 12 beats + 8 slide changes
+  { file: 'zoom-deck.html', presses: 20, wait: 900 },    // 12 beats + 8 zoom dives
 ];
 
 const browser = await chromium.launch();
