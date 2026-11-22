@@ -11,7 +11,7 @@ import path from 'node:path';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DECKS = [
-  { file: 'index.html', presses: 20, wait: 2600 },       // 12 beats + 8 zoom dives
+  { file: 'index.html', presses: 20, wait: 900 },        // 12 beats + 8 zoom dives
   { file: 'garden-deck.html', presses: 20, wait: 1400 }, // 12 beats + 8 slide changes
 ];
 
@@ -42,10 +42,17 @@ for (const deck of DECKS) {
     const errors = [];
     page.on('pageerror', e => errors.push(e.message));
     const frame = await open(page, deck, sandboxed);
-    await page.waitForTimeout(3000);
-    for (let i = 0; i < deck.presses; i++) { await page.keyboard.press('ArrowRight'); await page.waitForTimeout(deck.wait); }
+    // Wait for the deck to boot, then press only when it is ready: the zoom deck
+    // ignores presses while a dive is animating, and CI runners can be slow.
+    const ready = () => frame().waitForFunction(() => window.__deck && window.__deck.cur >= 0 && !window.__deck.busy, null, { timeout: 30000 });
+    const press = async key => { await ready(); await page.keyboard.press(key); await page.waitForTimeout(deck.wait); };
+    await ready();
+    await page.waitForTimeout(1500);
+    for (let i = 0; i < deck.presses; i++) await press('ArrowRight');
+    await ready();
     const end = await frame().evaluate(() => [window.__deck.cur, window.__deck.step]);
-    for (let i = 0; i < deck.presses; i++) { await page.keyboard.press('ArrowLeft'); await page.waitForTimeout(deck.wait); }
+    for (let i = 0; i < deck.presses; i++) await press('ArrowLeft');
+    await ready();
     const start = await frame().evaluate(() => [window.__deck.cur, window.__deck.step]);
     const ok = errors.length === 0 && end[0] === 8 && start[0] === 0 && start[1] === 0;
     console.log(`${ok ? 'PASS' : 'FAIL'}  ${deck.file}${sandboxed ? ' (sandboxed)' : ''}  forward→${end}  back→${start}${errors.length ? '  errors: ' + errors.join(' | ') : ''}`);
