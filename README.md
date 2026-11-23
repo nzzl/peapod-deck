@@ -6,7 +6,7 @@ Most presentations are a wall of bullet points and a room full of people checkin
 
 Meet Sprig, a little sprout who hops across the bottom of every slide, jumps onto whatever you're talking about, and throws a confetti party at the end. Meanwhile, the garden gets on with its day. Birds land on Sprig's head. A koi leaps out of the pond. A snake slithers past and startles Zip, Sprig's sparky little sidekick.
 
-Nobody checks their phone during the talk with the hopping sprout.
+It's hard to look away from a hopping sprout.
 
 ![Sprig and Zip in the garden, then Sprig hops to the next slide and lands on the highlighted bar](docs/slides.gif)
 
@@ -16,11 +16,11 @@ Press → to start. Click the critters. Press **N** for secret presenter notes.
 
 ## Why you might like it
 
-- **It's one file.** Open it in a browser and present. Nothing to install, no account, no build step.
+- **It's one file.** Nothing to install. Just open it in a browser and present.
 - **It moves with you.** Headlines fly in word by word, highlighter sweeps across key phrases, and Sprig hops over to point at the important bit.
 - **It's interactive.** Flip a before/after switch, click around a diagram, or drag sliders live on stage.
 - **It keeps the room company.** While you talk, Sprig stretches, waves at Zip and watches the birds.
-- **It's yours.** Swap in your own words and keep the friends. Or hand the file to your AI assistant and ask for a whole new talk.
+- **It's yours.** Swap in your own words and keep the friends.
 
 ## Feeling fancy? Try the zoom version
 
@@ -38,7 +38,7 @@ In **[the zoom version](https://nzzl.github.io/peapod-deck/zoom-deck.html)**, ev
 | 🐟 **The koi** | Leaps out of the lily pond whenever it feels like it |
 | 🦎 **Monty** | A monitor lizard on a slow stroll who also swims, apparently |
 | 🐍 **Noodle** | A friendly snake who is very long |
-| 🦎 **Gigi** | A gecko who scurries up the tree trunks and licks her own eyeballs |
+| 🌿 **Gigi** | A gecko who scurries up the tree trunks and licks her own eyeballs |
 | 🦋 **The butterfly** | Visits the flowers and, if you're lucky, Sprig |
 
 ## Make it your own
@@ -46,8 +46,6 @@ In **[the zoom version](https://nzzl.github.io/peapod-deck/zoom-deck.html)**, ev
 1. **Download** `index.html`.
 2. **Change the words.** Each slide is a clearly marked section in the file, and the speaker notes sit near the bottom.
 3. **Open it in your browser** and press **F** for full screen.
-
-Or skip the editing: give `index.html` to your AI assistant, describe your talk, and ask it to keep the cast.
 
 **Keys:** `→` / `Space` next · `←` back · `F` full screen · `R` replay a slide · `N` notes · `Home` / `End` first / last slide
 
